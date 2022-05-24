@@ -19,26 +19,18 @@ class UsersOrganisationsSeeder extends Seeder
             [
                 'user_id' => 1,
                 'organisation_id' => 1,
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
             [
                 'user_id' => 2,
                 'organisation_id' => 2,
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
             [
                 'user_id' => 3,
                 'organisation_id' => 3,
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
             [
                 'user_id' => 4,
                 'organisation_id' => 4,
-                'created_at' => now(),
-                'updated_at' => now(),
             ],
         ]);
     }

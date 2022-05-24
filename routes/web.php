@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\OrganisationsController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -22,10 +23,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-    Route::get('/admin/gumpy', [AdminController::class, 'index'])->name('gumpy');
-
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::group([
+        'prefix' => 'admin',
+        'middleware' => 'is_admin',
+        'as' => 'admin.',
+    ], function () {
+        Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('/organisations', [OrganisationsController::class, 'index'])->name('organisations');
+    });
 });

@@ -72,6 +72,16 @@ class User extends Authenticatable
 
     public function organisations()
     {
-        return $this->belongsToMany(Organisation::class, 'users_organisations');
+        return $this->belongsToMany(Organisation::class, 'users_roles')->orderBy('name');
+    }
+
+    public function organisationRoles()
+    {
+        return $this->hasMany(UsersRole::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'users_roles');
     }
 }

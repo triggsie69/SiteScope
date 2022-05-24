@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
             OrganisationsSeeder::class,
             SitesSeeder::class,
             UsersSeeder::class,
-            UsersOrganisationsSeeder::class,
             RolesSeeder::class,
             UsersRolesSeeder::class,
         ]);

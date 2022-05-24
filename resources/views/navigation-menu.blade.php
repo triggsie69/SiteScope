@@ -2,7 +2,7 @@
 $breadcrumbs = [
     'admin' => 'Administration',
     'dashboard' => 'Dashboard',
-    'gumpy' => 'Gumpy'
+    'organisations' => 'Organisations'
 ];
 @endphp
 
@@ -16,14 +16,14 @@ $breadcrumbs = [
                         <a href="{{ route('home') }}"><i class="fa fa-home"  style="color: rgb(107 114 128);"></i></a>
                     </li>
                     @for ($i = 1; $i <= count(Request::segments()); $i++)
-                        @if (Route::has(Request::segment($i)))
+                        @if (array_key_exists(Request::segment($i), $breadcrumbs))
                             @if ($i < count(Request::segments()))
                                 <li>
-                                    <a href="{{ route(Request::segment($i)) }}">{{ $breadcrumbs[Request::segment($i)] }}</a>
+                                    <a href="/{{ Request::segment($i) }}">{{ $breadcrumbs[Request::segment($i)] }}</a>
                                 </li>
                             @elseif (count(Request::segments()) > 1)
                                 <li>
-                                    <a href="{{ route(Request::segment($i-1)) }}">
+                                    <a href="/{{ Request::segment($i-1) }}">
                                         {{ $breadcrumbs[Request::segment($i)] }}<i class="ml-2 align-middle fa-solid fa-xmark"></i>
                                     </a>
                                 </li>

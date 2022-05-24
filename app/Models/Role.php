@@ -9,6 +9,11 @@ class Role extends Model
 {
     use HasFactory;
 
+    public const ORGADMIN = 1;
+    public const SITEADMIN = 2;
+    public const STOREPERSON = 3;
+    public const CONSUMER = 4;
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'users_roles')->withPivot('organisation_id')->withTimestamps();

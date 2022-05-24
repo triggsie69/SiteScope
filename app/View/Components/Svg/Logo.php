@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\nav;
+namespace App\View\Components\Svg;
 
 use Illuminate\View\Component;
 
-class dashboard-link extends Component
+class Logo extends Component
 {
     /**
      * Create a new component instance.
@@ -14,7 +14,6 @@ class dashboard-link extends Component
     public function __construct()
     {
         //
-        dd('Here I am');
     }
 
     /**
@@ -24,6 +23,6 @@ class dashboard-link extends Component
      */
     public function render()
     {
-        return view('components.nav.dashboard-link');
+        return view('components.svg.logo');
     }
 }

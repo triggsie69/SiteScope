@@ -14,11 +14,14 @@ class DropdownOrganisation extends Component
 
     public function render()
     {
+        if(!Auth::check()) abort(403);
         return view('livewire.dropdown-organisation');
     }
 
     public function refreshAuthUser(User $user)
     {
+        if(!Auth::check()) abort(403);
         Auth::setUser($user);
+        $this->emit('authupdated');
     }
 }

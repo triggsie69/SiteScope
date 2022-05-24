@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class OrganisationsController extends Controller
 {
     public function index(Request $request)
     {   
-        return view('admin.dashboard');
+        return view('admin.organisations');
     }
 }
