@@ -1,21 +1,23 @@
 <?php
 
-namespace App\View\Components\Nav;
+namespace App\View\Components\Svg;
 
 use Illuminate\View\Component;
 
-class DashboardLink extends Component
+class ColumnSort extends Component
 {
-    public $icon = "###";
+    public $asc = false;
+    public $desc = false;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($icon)
+    public function __construct($asc,$desc)
     {
-        $this->icon = $icon;
+        $this->asc = $asc;
+        $this->desc = $desc;
     }
 
     /**
@@ -25,6 +27,6 @@ class DashboardLink extends Component
      */
     public function render()
     {
-        return view('components.nav.dashboard-link');
+        return view('components.svg.column-sort');
     }
 }
