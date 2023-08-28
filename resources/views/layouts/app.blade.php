@@ -32,5 +32,17 @@
 
         @livewireScripts
         @livewire('livewire-ui-modal')
+        <script>
+
+            function showHeaderMenu() {
+                console.log("showHeaderMenu()");
+            }
+
+            addEventListener("contextmenu", (event) => {
+                if(event.preventDefault != undefined) event.preventDefault();
+                if(event.stopPropagation != undefined) event.stopPropagation();
+                console.log("event: contextmenu");
+            });
+        </script>
     </body>
 </html>
